@@ -10,18 +10,19 @@
     :date-locale="dateLocale"
     :hljs="hljs"
   >
-    <n-theme-editor :style="themeEditorStyle">
-      <n-loading-bar-provider>
-        <n-message-provider>
-          <n-notification-provider>
-            <n-dialog-provider>
-              <Site />
-            </n-dialog-provider>
-          </n-notification-provider>
-        </n-message-provider>
-      </n-loading-bar-provider>
-      <n-global-style />
-    </n-theme-editor>
+      <n-theme-editor :style="themeEditorStyle">
+        <n-loading-bar-provider>
+          <n-message-provider>
+            <n-notification-provider>
+              <n-dialog-provider>
+                <Site />
+              </n-dialog-provider>
+            </n-notification-provider>
+          </n-message-provider>
+        </n-loading-bar-provider>
+        <n-global-style />
+      </n-theme-editor>
+
   </component>
 </template>
 
@@ -30,11 +31,13 @@ import { defineComponent } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { initRouter, siteSetup } from './store'
 import Site from './Site.vue'
+import SiteHeader from './SiteHeader.vue'
 
 export default defineComponent({
   name: 'SiteProvider',
   components: {
-    Site
+    Site,
+    SiteHeader
   },
   setup () {
     initRouter(useRouter(), useRoute())

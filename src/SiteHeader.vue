@@ -22,10 +22,6 @@
         blur-after-select
         @select="handleSearch"
       />
-      <!-- TODO: add it -->
-      <!-- template #suffix>
-        <span style="color: var(--placeholder-color)">⌘ + K</span>
-      </template -->
     </div>
     <n-popover
       v-if="isMobile || isTablet"
@@ -167,9 +163,11 @@ export default defineComponent({
     const message = useMessage()
     const route = useRoute()
     const router = useRouter()
+    console.log(route)
 
     const mobilePopoverRef = ref(null)
     const themeAndLocaleReg = /^(\/[^/]+){2}/
+    console.log(themeAndLocaleReg.exec(route.path)[0] + '/docs/introduction')
 
     // i18n
     const { t } = i18n(locales)
@@ -359,7 +357,7 @@ export default defineComponent({
       renderMenuLabel,
       mobilePopoverRef,
       tusimple: process.env.TUSIMPLE,
-      dev: __DEV__,
+      dev: true,
       message,
       t,
       version,

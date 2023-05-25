@@ -2,7 +2,6 @@
   <n-layout
     id="doc-layout"
     :has-sider="showSider"
-    :position="isMobile ? 'static' : 'absolute'"
     :style="{
       top: isMobile ? '' : 'var(--header-height)'
     }"
@@ -78,6 +77,8 @@ export default defineComponent({
     const isMobileRef = useIsMobile()
     const isTabletRef = useIsTablet()
 
+    console.log(isMobileRef)
+    console.log(useMemo)
     return {
       layoutScrollbarProps: {
         containerClass: 'document-scroll-container'
