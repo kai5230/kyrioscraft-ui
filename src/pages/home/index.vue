@@ -1,7 +1,6 @@
 <template>
   <n-layout
     :native-scrollbar="false"
-    :position="isMobile ? 'static' : 'absolute'"
     :style="isMobile ? undefined : 'top: var(--header-height);'"
   >
     <div class="banner" style="overflow: hidden">
